@@ -32,6 +32,185 @@ Cloth::~Cloth() {
 
 void Cloth::buildGrid() {
   // TODO (Part 1): Build a grid of masses and springs.
+    float dx = width / (num_width_points - 1.0);
+    float dy = height / (num_height_points - 1.0);
+
+  for (int i = 0; i < num_height_points; i++) {
+      for (int j = 0; j < num_width_points; j++) {
+          Vector3D random_pos;
+          float x = j * dx;
+          float y = i * dy;
+          if (orientation == HORIZONTAL) {
+              random_pos = Vector3D(x, 1.0, y);
+          } else if (orientation == VERTICAL) {
+              //float z = (rand() / 500.0) - (1.0 / 1000.0);
+              float z = (rand() - (0.5 * RAND_MAX)) / RAND_MAX / 500;
+              random_pos = Vector3D(x, y, z);
+          }
+          point_masses.emplace_back(random_pos, false);
+          x += dx;
+
+      }
+  }
+
+    //check if x, y  is in pinned vector
+    for (vector<int> v: pinned) {
+
+      PointMass* is_pinned = &point_masses[v[0] * num_width_points + v[1]];
+      is_pinned->pinned = true;
+  }
+
+  //initializing springs for each type of constraint:
+  //Structural constraints exist between a point mass and the
+  //    point mass to its left as well as the point mass above it.
+
+  //Shearing constraints exist between a point mass and the point mass to its diagonal
+  //    upper left as well as the point mass to its diagonal upper right.
+
+  //Bending constraints exist between a point mass and the point mass two away to its
+  //    left as well as the point mass two above it.
+
+//  for (PointMass pm : point_masses) {
+//      int x = (int) pm.position.x;
+//      int y = (int) pm.position.y;
+
+    for (int y = 0; y < num_height_points; y++) {
+        for (int x = 0; x < num_width_points; x++) {
+
+            PointMass* pm = &point_masses[y * num_width_points + x];
+
+
+            //pointer arithmetic to access all relevant point masses relative to current one
+
+            PointMass* left = &point_masses[y * num_width_points + x - 1];
+            PointMass* above = &point_masses[(y - 1) * num_width_points + x];
+            PointMass* top_left = &point_masses[(y - 1) * num_width_points + x - 1];
+            PointMass* top_right = &point_masses[(y - 1) * num_width_points + x + 1];
+            PointMass* two_left = &point_masses[y * num_width_points + x - 2];
+            PointMass* two_above = &point_masses[(y - 2) * num_width_points + x];
+
+            //instantiating all possible spring types, to be made persistent by appending to the springs vector
+            //no need because of emplace_back
+            //      Spring struct_left = Spring(&pm, left, STRUCTURAL);
+            //      Spring struct_above = Spring(&pm, above, STRUCTURAL);
+            //      Spring shear_top_left = Spring(&pm, top_left, SHEARING);
+            //      Spring shear_top_right = Spring(&pm, top_right, SHEARING);
+            //      Spring bend_left = Spring(&pm, two_left, BENDING);
+            //      Spring bend_above = Spring(&pm, two_above, BENDING);
+
+
+            //first case: first row
+            //no shearing
+            if (y == 0) {
+                if (x == 0) {
+                    continue;
+                }
+                if (x == 1) {
+                    //structural left
+                    springs.emplace_back(pm, left, STRUCTURAL);
+                    continue;
+                }
+                //structural left
+                springs.emplace_back(pm, left, STRUCTURAL);
+                //bending left
+                springs.emplace_back(pm, two_left, BENDING);
+                continue;
+            }
+            //second case: second row
+            //no bending up
+            if (y == 1) {
+                if (x == 0) {
+                    //structural up
+                    springs.emplace_back(pm, above, STRUCTURAL);
+                    //shearing top-right
+                    springs.emplace_back(pm, top_right, SHEARING);
+                    continue;
+                }
+                if (x == 1) {
+                    //structural up, left
+                    springs.emplace_back(pm, above, STRUCTURAL);
+                    springs.emplace_back(pm, left, STRUCTURAL);
+                    //shearing top-left, top-right
+                    springs.emplace_back(pm, top_left, SHEARING);
+                    springs.emplace_back(pm, top_right, SHEARING);
+                    continue;
+                }
+                if (x == num_width_points - 1) {
+                    //structural up, left
+                    springs.emplace_back(pm, above, STRUCTURAL);
+                    springs.emplace_back(pm, left, STRUCTURAL);
+                    //shearing top-left
+                    springs.emplace_back(pm, top_left, SHEARING);
+                    //bending left
+                    springs.emplace_back(pm, two_left, BENDING);
+                    continue;
+                }
+                //structural up, left
+                springs.emplace_back(pm, above, STRUCTURAL);
+                springs.emplace_back(pm, left, STRUCTURAL);
+                //shearing top-left, top-right
+                springs.emplace_back(pm, top_left, SHEARING);
+                springs.emplace_back(pm, top_right, SHEARING);
+                //bending left
+                springs.emplace_back(pm, two_left, BENDING);
+                continue;
+            }
+
+            //now always bending up
+            if (x == 0) {
+                //structural up
+                springs.emplace_back(pm, above, STRUCTURAL);
+
+                //shearing top-right
+                springs.emplace_back(pm, top_right, SHEARING);
+
+                //bending up
+                springs.emplace_back(pm, two_above, BENDING);
+
+                continue;
+            }
+
+            if (x == 1) {
+                //structural up, left
+                springs.emplace_back(pm, above, STRUCTURAL);
+                springs.emplace_back(pm, left, STRUCTURAL);
+
+                //shearing top-left, top-right
+                springs.emplace_back(pm, top_left, SHEARING);
+                springs.emplace_back(pm, top_right, SHEARING);
+
+                //bending up
+                springs.emplace_back(pm, two_above, BENDING);
+
+                continue;
+            }
+
+            if (x == num_width_points - 1) {
+                //structural up, left
+                springs.emplace_back(pm, above, STRUCTURAL);
+                springs.emplace_back(pm, left, STRUCTURAL);
+                //shearing top-left
+                springs.emplace_back(pm, top_left, SHEARING);
+                //bending left, up
+                springs.emplace_back(pm, two_above, BENDING);
+                springs.emplace_back(pm, two_left, BENDING);
+
+                continue;
+            }
+            //rest of cases
+            //structural up, left
+            springs.emplace_back(pm, above, STRUCTURAL);
+            springs.emplace_back(pm, left, STRUCTURAL);
+            //shearing top-left, top-right
+            springs.emplace_back(pm, top_left, SHEARING);
+            springs.emplace_back(pm, top_right, SHEARING);
+            //bending left, up
+            springs.emplace_back(pm, two_above, BENDING);
+            springs.emplace_back(pm, two_left, BENDING);
+        }
+    }
+    return;
+
 
 }
 
