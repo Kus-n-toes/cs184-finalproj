@@ -221,9 +221,56 @@ void Cloth::simulate(double frames_per_sec, double simulation_steps, ClothParame
   double delta_t = 1.0f / frames_per_sec / simulation_steps;
 
   // TODO (Part 2): Compute total force acting on each point mass.
+  Vector3D external_sum = Vector3D(0,0,0);
+  for (Vector3D f : external_accelerations) {
+      external_sum += f;
+  }
+  Vector3D external_forces = external_sum * mass;
 
+  //reset all point_mass forces
+  for (PointMass &pm : point_masses) {
+      pm.forces = external_forces;
+  }
+
+  for (Spring &s : springs) {
+
+      //from spec: smaller k_s for bending constraint
+      const float bending_k = 0.2;
+      int type = s.spring_type;
+      float spring_length = (s.pm_a->position - s.pm_b->position).norm();
+
+      Vector3D force_s;
+
+      //direction of force vectors for a towards b
+      Vector3D direction = (s.pm_b->position - s.pm_a->position).unit();
+      if (type == STRUCTURAL && cp->enable_structural_constraints) {
+          force_s = cp->ks * (spring_length - s.rest_length) * direction;
+          s.pm_a->forces += force_s;
+          s.pm_b->forces -= force_s;
+      } else if (type == SHEARING && cp->enable_shearing_constraints) {
+          force_s = cp->ks * (spring_length - s.rest_length) * direction;
+          s.pm_a->forces += force_s;
+          s.pm_b->forces -= force_s;
+      } else if (type == BENDING && cp->enable_bending_constraints) {
+          force_s = bending_k * cp->ks * (spring_length - s.rest_length) * direction;
+          s.pm_a->forces += force_s;
+          s.pm_b->forces -= force_s;
+      }
+  }
 
   // TODO (Part 2): Use Verlet integration to compute new point mass positions
+  for (PointMass &pm : point_masses) {
+      if (!pm.pinned) {
+          Vector3D x_minus_dt = pm.last_position;
+          Vector3D x_t = pm.position;
+
+          pm.last_position = x_t;
+          pm.position = x_t + (1.0 - cp->damping / 100.0) * (x_t - x_minus_dt) + (pm.forces / mass) * pow(delta_t, 2);
+      }
+      //clear forces
+      pm.forces = Vector3D(0,0,0);
+
+  }
 
 
   // TODO (Part 4): Handle self-collisions.
@@ -234,6 +281,39 @@ void Cloth::simulate(double frames_per_sec, double simulation_steps, ClothParame
 
   // TODO (Part 2): Constrain the changes to be such that the spring does not change
   // in length more than 10% per timestep [Provot 1995].
+  const float heuristic = 1.1;
+    for (Spring &s : springs) {
+        float spring_length = (s.pm_a->position - s.pm_b->position).norm();
+        float max_length = s.rest_length * heuristic;
+        float delta_length = spring_length - max_length;
+        if (delta_length > 0) {
+
+            //go next
+            if (s.pm_a->pinned && s.pm_b->pinned) {
+                continue;
+            }
+
+            //constrain b
+            if (s.pm_a->pinned) {
+                s.pm_b->position += delta_length * (s.pm_a->position - s.pm_b->position).unit();
+                continue;
+            }
+
+            //constrain a
+            if (s.pm_b->pinned) {
+                s.pm_a->position += delta_length * (s.pm_b->position - s.pm_a->position).unit();
+                continue;
+            }
+
+            //constrain both
+            Vector3D temp_a = s.pm_a->position;
+            s.pm_a->position += (delta_length / 2.0) * (s.pm_b->position - s.pm_a->position).unit();
+            s.pm_b->position += (delta_length / 2.0) * (s.pm_a->position - s.pm_b->position).unit();
+        }
+
+
+    }
+
 
 }
 
