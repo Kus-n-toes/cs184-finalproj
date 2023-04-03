@@ -1,4 +1,4 @@
-# Install script for directory: /Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/src
+# Install script for directory: /Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,21 +39,21 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/clothsim")
+   "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/clothsim")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics" TYPE EXECUTABLE FILES "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/cmake-build-debug/clothsim")
-  if(EXISTS "$ENV{DESTDIR}/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/clothsim" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/clothsim")
+  file(INSTALL DESTINATION "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics" TYPE EXECUTABLE FILES "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug/clothsim")
+  if(EXISTS "$ENV{DESTDIR}/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/clothsim" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/clothsim")
     execute_process(COMMAND /usr/bin/install_name_tool
-      -delete_rpath "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/cmake-build-debug/ext/nanogui"
-      "$ENV{DESTDIR}/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/clothsim")
+      -delete_rpath "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug/ext/nanogui"
+      "$ENV{DESTDIR}/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/clothsim")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/Library/Developer/CommandLineTools/usr/bin/strip" -u -r "$ENV{DESTDIR}/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/clothsim")
+      execute_process(COMMAND "/Library/Developer/CommandLineTools/usr/bin/strip" -u -r "$ENV{DESTDIR}/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/clothsim")
     endif()
   endif()
 endif()

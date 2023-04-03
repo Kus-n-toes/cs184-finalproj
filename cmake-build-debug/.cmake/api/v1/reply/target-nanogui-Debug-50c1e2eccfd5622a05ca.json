@@ -71,10 +71,10 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "nanogui-obj::@f32fc89d7586c0a8572c"
+			"id" : "glfw_objects::@05f448bf7d78af58ae8d"
 		},
 		{
-			"id" : "glfw_objects::@05f448bf7d78af58ae8d"
+			"id" : "nanogui-obj::@f32fc89d7586c0a8572c"
 		}
 	],
 	"folder" : 

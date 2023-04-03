@@ -186,7 +186,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -Wno-deprecated-declarations -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fPIC -fcolor-diagnostics"
+					"fragment" : " -Wno-deprecated-declarations -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -fPIC -fcolor-diagnostics"
 				},
 				{
 					"backtrace" : 2,
@@ -236,31 +236,31 @@
 			[
 				{
 					"backtrace" : 8,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glad/include"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glad/include"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/eigen"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/eigen"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glfw/include"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glfw/include"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/nanovg/src"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/nanovg/src"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/include"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/include"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/cmake-build-debug/ext/nanogui"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug/ext/nanogui"
 				},
 				{
 					"backtrace" : 10,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/coro"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/coro"
 				}
 			],
 			"language" : "C",
@@ -274,7 +274,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -std=c++11 -m64 -g -Wall -Wextra -std=c++14 -stdlib=libc++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fPIC -fcolor-diagnostics"
+					"fragment" : " -std=c++11 -m64 -g -Wall -Wextra -std=c++14 -stdlib=libc++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -fPIC -fcolor-diagnostics"
 				},
 				{
 					"backtrace" : 2,
@@ -324,31 +324,31 @@
 			[
 				{
 					"backtrace" : 8,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glad/include"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glad/include"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/eigen"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/eigen"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glfw/include"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glfw/include"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/nanovg/src"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/nanovg/src"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/include"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/include"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/cmake-build-debug/ext/nanogui"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug/ext/nanogui"
 				},
 				{
 					"backtrace" : 10,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/coro"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/coro"
 				}
 			],
 			"language" : "CXX",

@@ -79,7 +79,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -std=c++11 -m64 -g -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fcolor-diagnostics"
+					"fragment" : " -std=c++11 -m64 -g -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -fcolor-diagnostics"
 				},
 				{
 					"fragment" : "-Wno-deprecated-declarations -Wno-c++11-extensions"
@@ -108,11 +108,11 @@
 			[
 				{
 					"backtrace" : 6,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/include"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/include"
 				},
 				{
 					"backtrace" : 7,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/CGL/include"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/CGL/include"
 				},
 				{
 					"backtrace" : 8,
@@ -120,19 +120,19 @@
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glad/include"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glad/include"
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glfw/include"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glfw/include"
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/nanovg/src"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/nanovg/src"
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/eigen"
+					"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/eigen"
 				}
 			],
 			"language" : "CXX",
@@ -154,11 +154,11 @@
 	[
 		{
 			"backtrace" : 3,
-			"id" : "nanogui::@f32fc89d7586c0a8572c"
+			"id" : "CGL::@471a8420bb23f6744067"
 		},
 		{
 			"backtrace" : 3,
-			"id" : "CGL::@471a8420bb23f6744067"
+			"id" : "nanogui::@f32fc89d7586c0a8572c"
 		}
 	],
 	"id" : "clothsim::@145eef247bfb46b6828c",
@@ -168,7 +168,7 @@
 		[
 			{
 				"backtrace" : 2,
-				"path" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics"
+				"path" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics"
 			}
 		],
 		"prefix" : 
@@ -189,7 +189,7 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/cmake-build-debug/ext/nanogui",
+				"fragment" : "-Wl,-rpath,/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug/ext/nanogui",
 				"role" : "libraries"
 			},
 			{

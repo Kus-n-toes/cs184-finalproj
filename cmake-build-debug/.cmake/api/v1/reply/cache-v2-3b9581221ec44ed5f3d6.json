@@ -59,7 +59,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/cmake-build-debug/CGL"
+			"value" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug/CGL"
 		},
 		{
 			"name" : "CGL_BUILD_DEBUG",
@@ -143,7 +143,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;nanogui;general;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Cocoa.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/OpenGL.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/CoreVideo.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/IOKit.framework;general;/usr/local/lib/libfreetype.dylib;"
+			"value" : "general;nanogui;general;/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Cocoa.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreVideo.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/IOKit.framework;general;/usr/local/lib/libfreetype.dylib;"
 		},
 		{
 			"name" : "CGL_SOURCE_DIR",
@@ -155,7 +155,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/CGL"
+			"value" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/CGL"
 		},
 		{
 			"name" : "CMAKE_ADDR2LINE",
@@ -211,7 +211,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/cmake-build-debug"
+			"value" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -635,7 +635,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -707,7 +707,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics"
+			"value" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -927,7 +927,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "12.6"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_OSX_SYSROOT",
@@ -939,7 +939,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -1283,7 +1283,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Cocoa.framework"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Cocoa.framework"
 		},
 		{
 			"name" : "CORE_FOUNDATION_FRAMEWORK",
@@ -1299,7 +1299,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/CoreFoundation.framework"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreFoundation.framework"
 		},
 		{
 			"name" : "CORE_VIDEO_FRAMEWORK",
@@ -1315,7 +1315,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/CoreVideo.framework"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreVideo.framework"
 		},
 		{
 			"name" : "ClothSim_BINARY_DIR",
@@ -1327,7 +1327,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/cmake-build-debug"
+			"value" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug"
 		},
 		{
 			"name" : "ClothSim_IS_TOP_LEVEL",
@@ -1351,7 +1351,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics"
+			"value" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Freetype",
@@ -1375,7 +1375,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/OpenGL.framework][/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/OpenGL.framework][c ][v()]"
+			"value" : "[/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework][/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework][c ][v()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
@@ -1463,7 +1463,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/cmake-build-debug/ext/nanogui/ext_build/glfw"
+			"value" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug/ext/nanogui/ext_build/glfw"
 		},
 		{
 			"name" : "GLFW_BUILD_DOCS",
@@ -1559,7 +1559,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glfw"
+			"value" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glfw"
 		},
 		{
 			"name" : "GLFW_USE_CHDIR",
@@ -1707,7 +1707,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/IOKit.framework"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/IOKit.framework"
 		},
 		{
 			"name" : "LIB_SUFFIX",
@@ -1803,7 +1803,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/cmake-build-debug/ext/nanogui"
+			"value" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug/ext/nanogui"
 		},
 		{
 			"name" : "NanoGUI_IS_TOP_LEVEL",
@@ -1827,7 +1827,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/erickusnanto/Desktop/cs184/p4-clothsim-sp23-fisics/ext/nanogui"
+			"value" : "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui"
 		},
 		{
 			"name" : "OPENGL_INCLUDE_DIR",
@@ -1843,7 +1843,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/OpenGL.framework"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework"
 		},
 		{
 			"name" : "OPENGL_gl_LIBRARY",
@@ -1859,7 +1859,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/OpenGL.framework"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework"
 		},
 		{
 			"name" : "OPENGL_glu_LIBRARY",
@@ -1875,7 +1875,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/OpenGL.framework"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework"
 		},
 		{
 			"name" : "VULKAN_INCLUDE_DIR",
@@ -1919,7 +1919,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Cocoa.framework"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Cocoa.framework"
 		},
 		{
 			"name" : "corevideo_library",
@@ -1931,7 +1931,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/CoreVideo.framework"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreVideo.framework"
 		},
 		{
 			"name" : "glfw_LIB_DEPENDS",
@@ -1943,7 +1943,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Cocoa.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/IOKit.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/CoreFoundation.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/CoreVideo.framework;"
+			"value" : "general;/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Cocoa.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/IOKit.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreFoundation.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreVideo.framework;"
 		},
 		{
 			"name" : "iokit_library",
@@ -1955,7 +1955,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/IOKit.framework"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/IOKit.framework"
 		},
 		{
 			"name" : "nanogui_LIB_DEPENDS",
@@ -1967,7 +1967,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/Cocoa.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/OpenGL.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/CoreVideo.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/IOKit.framework;"
+			"value" : "general;/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Cocoa.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreVideo.framework;general;/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/IOKit.framework;"
 		},
 		{
 			"name" : "opengl_library",
@@ -1979,7 +1979,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/OpenGL.framework"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework"
 		}
 	],
 	"kind" : "cache",
