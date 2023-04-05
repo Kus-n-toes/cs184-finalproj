@@ -274,10 +274,7 @@ void Cloth::simulate(double frames_per_sec, double simulation_steps, ClothParame
 
 
   // TODO (Part 4): Handle self-collisions.
-  build_spatial_map();
-  for (PointMass &pm : point_masses) {
-      self_collide(pm, simulation_steps);
-  }
+
 
   // TODO (Part 3): Handle collisions with other primitives.
   for (PointMass &pm : point_masses) {
@@ -331,56 +328,18 @@ void Cloth::build_spatial_map() {
   map.clear();
 
   // TODO (Part 4): Build a spatial map out of all of the point masses.
-  for (PointMass &pm : point_masses) {
-      float hash = hash_position(pm.position);
-      //cout << hash << endl;
-      if (map[hash] == NULL) {
-          map[hash] = new vector<PointMass *>();
-          map[hash]->emplace_back(&pm);
-      } else {
-          map[hash]->emplace_back(&pm);
-      }
-  }
+
 }
 
 void Cloth::self_collide(PointMass &pm, double simulation_steps) {
   // TODO (Part 4): Handle self-collision for a given point mass.
-  float hash = hash_position(pm.position);
-  vector<PointMass *> vec = *map[hash];
-  Vector3D correct_vect = {0, 0, 0};
-  int count = 0;
-  for (PointMass* pm_cand : vec) {
-      if (pm_cand == &pm) {
-          continue;
-      } else {
-          if ((pm_cand->position - pm.position).norm() <= 2 * thickness) {
-              Vector3D correction = -(pm_cand->position - pm.position);
-              correction.normalize();
-              correction = 2 * thickness * correction + (pm_cand->position - pm.position);
-              correct_vect += correction;
-              count += 1;
-          }
-      }
-  }
-  //cout << count << endl;
-  if (count > 0) {
-      correct_vect = (correct_vect / count) / simulation_steps;
-      //cout << correct_vect << endl;
-  }
-  pm.position = pm.position + correct_vect;
+
 }
 
 float Cloth::hash_position(Vector3D pos) {
   // TODO (Part 4): Hash a 3D position into a unique float identifier that represents membership in some 3D box volume.
-  double w = 3.0 * width / num_width_points;
-  double h = 3.0 * height / num_height_points;
-  double t = max(w, h);
-  int x_i = pos.x / w;
-  int y_i = pos.y / h;
-  int z_i = pos.z / t;
 
-  float hash = x_i + width * y_i + width * height * z_i;
-  return hash;
+  return 0.f; 
 }
 
 ///////////////////////////////////////////////////////
