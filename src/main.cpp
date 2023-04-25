@@ -14,6 +14,7 @@
 
 #include "CGL/CGL.h"
 #include "collision/plane.h"
+#include "collision/rectangle.h"
 #include "collision/sphere.h"
 #include "cloth.h"
 #include "clothSimulator.h"
@@ -32,8 +33,9 @@ using json = nlohmann::json;
 const string SPHERE = "sphere";
 const string PLANE = "plane";
 const string CLOTH = "cloth";
+const string RECTANGLE = "rectangle";
 
-const unordered_set<string> VALID_KEYS = {SPHERE, PLANE, CLOTH};
+const unordered_set<string> VALID_KEYS = {SPHERE, PLANE, CLOTH, RECTANGLE, "rectangle2", "rectangle3", "rectangle4"};
 
 ClothSimulator *app = nullptr;
 GLFWwindow *window = nullptr;
@@ -327,7 +329,7 @@ bool loadObjectsFromFile(string filename, Cloth *cloth, ClothParameters *cp, vec
 
       Sphere *s = new Sphere(origin, radius, friction, sphere_num_lat, sphere_num_lon);
       objects->push_back(s);
-    } else { // PLANE
+    } else if (key == PLANE) { // PLANE
       Vector3D point, normal;
       double friction;
 
@@ -356,6 +358,43 @@ bool loadObjectsFromFile(string filename, Cloth *cloth, ClothParameters *cp, vec
 
       Plane *p = new Plane(point, normal, friction);
       objects->push_back(p);
+    } else { //RECTANGLE
+        Vector3D topRight, bottomLeft, normal;
+        double friction;
+
+        auto it_point = object.find("topRight");
+        if (it_point != object.end()) {
+            vector<double> vec_point = *it_point;
+            topRight = Vector3D(vec_point[0], vec_point[1], vec_point[2]);
+        } else {
+            incompleteObjectError("rectangle", "topRight");
+        }
+
+        auto it_point2 = object.find("bottomLeft");
+        if (it_point2 != object.end()) {
+            vector<double> vec_point2 = *it_point2;
+            bottomLeft = Vector3D(vec_point2[0], vec_point2[1], vec_point2[2]);
+        } else {
+            incompleteObjectError("rectangle", "bottomLeft");
+        }
+
+        auto it_normal = object.find("normal");
+        if (it_normal != object.end()) {
+            vector<double> vec_normal = *it_normal;
+            normal = Vector3D(vec_normal[0], vec_normal[1], vec_normal[2]);
+        } else {
+            incompleteObjectError("rectangle", "normal");
+        }
+
+        auto it_friction = object.find("friction");
+        if (it_friction != object.end()) {
+            friction = *it_friction;
+        } else {
+            incompleteObjectError("rectangle", "friction");
+        }
+
+        Rectangle *p = new Rectangle(topRight, bottomLeft, normal, friction);
+        objects->push_back(p);
     }
   }
 

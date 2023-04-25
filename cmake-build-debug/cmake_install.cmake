@@ -1,8 +1,8 @@
-# Install script for directory: /Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics
+# Install script for directory: /Users/aaronshalf/Desktop/Semester6/CS184/cs184-finalproj
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/")
+  set(CMAKE_INSTALL_PREFIX "/Users/aaronshalf/Desktop/Semester6/CS184/cs184-finalproj/")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,9 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug/ext/nanogui/cmake_install.cmake")
-  include("/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug/CGL/cmake_install.cmake")
-  include("/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug/src/cmake_install.cmake")
+  include("/Users/aaronshalf/Desktop/Semester6/CS184/cs184-finalproj/cmake-build-debug/ext/nanogui/cmake_install.cmake")
+  include("/Users/aaronshalf/Desktop/Semester6/CS184/cs184-finalproj/cmake-build-debug/CGL/cmake_install.cmake")
+  include("/Users/aaronshalf/Desktop/Semester6/CS184/cs184-finalproj/cmake-build-debug/src/cmake_install.cmake")
 
 endif()
 
@@ -53,5 +53,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/aaronshalf/Desktop/Semester6/CS184/cs184-finalproj/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

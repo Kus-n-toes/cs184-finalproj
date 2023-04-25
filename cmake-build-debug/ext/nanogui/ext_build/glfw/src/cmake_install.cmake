@@ -1,4 +1,4 @@
-# Install script for directory: /Users/aaronshalf/Desktop/Semester6/CS184/p4-clothsim-sp23-fisics/ext/nanogui/ext/glfw/src
+# Install script for directory: /Users/aaronshalf/Desktop/Semester6/CS184/cs184-finalproj/ext/nanogui/ext/glfw/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
