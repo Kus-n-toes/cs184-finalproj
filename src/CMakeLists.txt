@@ -21,7 +21,7 @@ set(CLOTHSIM_VIEWER_SOURCE
 
     # Camera
     camera.cpp
-        collision/rectangle.cpp collision/rectangle.cpp)
+        collision/rectangle.cpp collision/rectangle.cpp fluid.cpp particle.cpp)
 
 # Windows-only sources
 if(WIN32)

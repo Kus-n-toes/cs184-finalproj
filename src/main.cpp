@@ -17,6 +17,8 @@
 #include "collision/rectangle.h"
 #include "collision/sphere.h"
 #include "cloth.h"
+#include "fluid.h"
+#include "particle.h"
 #include "clothSimulator.h"
 #include "json.hpp"
 #include "misc/file_utils.h"
@@ -33,9 +35,10 @@ using json = nlohmann::json;
 const string SPHERE = "sphere";
 const string PLANE = "plane";
 const string CLOTH = "cloth";
+const string FLUID = "fluid";
 const string RECTANGLE = "rectangle";
 
-const unordered_set<string> VALID_KEYS = {SPHERE, PLANE, CLOTH, RECTANGLE, "rectangle2", "rectangle3", "rectangle4"};
+const unordered_set<string> VALID_KEYS = {SPHERE, PLANE, CLOTH, FLUID, RECTANGLE, "rectangle2", "rectangle3", "rectangle4"};
 
 ClothSimulator *app = nullptr;
 GLFWwindow *window = nullptr;
@@ -158,7 +161,7 @@ void incompleteObjectError(const char *object, const char *attribute) {
   exit(-1);
 }
 
-bool loadObjectsFromFile(string filename, Cloth *cloth, ClothParameters *cp, vector<CollisionObject *>* objects, int sphere_num_lat, int sphere_num_lon) {
+bool loadObjectsFromFile(string filename, Cloth *cloth, Fluid *fluid, ClothParameters *cp, vector<CollisionObject *>* objects, int sphere_num_lat, int sphere_num_lon) {
   // Read JSON from file
   ifstream i(filename);
   if (!i.good()) {
@@ -301,6 +304,62 @@ bool loadObjectsFromFile(string filename, Cloth *cloth, ClothParameters *cp, vec
       cp->density = density;
       cp->damping = damping;
       cp->ks = ks;
+    } else if (key == FLUID) { //FLUID
+      double width, height, length;
+      int num_width_pts, num_height_pts, num_length_pts;
+      double radius;
+    
+      auto it_width = object.find("width");
+      if (it_width != object.end()) {
+        width = *it_width;
+      } else {
+        incompleteObjectError("fluid", "width");
+      }
+      auto it_height = object.find("height");
+      if (it_height != object.end()) {
+        height = *it_height;
+      } else {
+        incompleteObjectError("fluid", "height");
+      }
+      auto it_length = object.find("length");
+      if (it_length != object.end()) {
+        length = *it_length;
+      } else {
+        incompleteObjectError("fluid", "length");
+      }
+
+      auto it_num_width_pts = object.find("num_width_pts");
+      if (it_num_width_pts != object.end()) {
+        num_width_pts = *it_num_width_pts;
+      } else {
+        incompleteObjectError("fluid", "num_width_pts");
+      }
+      auto it_num_height_pts = object.find("num_height_pts");
+      if (it_num_height_pts != object.end()) {
+        num_height_pts = *it_num_height_pts;
+      } else {
+        incompleteObjectError("fluid", "height");
+      }
+      auto it_num_length_pts = object.find("num_length_pts");
+      if (it_num_length_pts != object.end()) {
+        num_length_pts = *it_num_length_pts;
+      } else {
+        incompleteObjectError("fluid", "num_length_pts");
+      }
+      auto it_radius = object.find("radius");
+      if (it_radius != object.end()) {
+        radius = *it_radius;
+      } else {
+        incompleteObjectError("sphere", "radius");
+      }
+
+      fluid->width = width;
+      fluid->height = height;
+      fluid->length = length;
+      fluid->num_width_pts = num_width_pts;
+      fluid->num_height_pts = num_height_pts;
+      fluid->num_length_pts = num_length_pts;
+      fluid->radius = radius;
     } else if (key == SPHERE) {
       Vector3D origin;
       double radius, friction;
@@ -424,7 +483,7 @@ bool find_project_root(const std::vector<std::string>& search_paths, std::string
   return false;
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv) { //MAIN
   // Attempt to find project root
   std::vector<std::string> search_paths = {
     ".",
@@ -436,6 +495,7 @@ int main(int argc, char **argv) {
   bool found_project_root = find_project_root(search_paths, project_root);
   
   Cloth cloth;
+  Fluid fluid;
   ClothParameters cp;
   vector<CollisionObject *> objects;
   
@@ -499,7 +559,7 @@ int main(int argc, char **argv) {
     file_to_load_from = def_fname.str();
   }
   
-  bool success = loadObjectsFromFile(file_to_load_from, &cloth, &cp, &objects, sphere_num_lat, sphere_num_lon);
+  bool success = loadObjectsFromFile(file_to_load_from, &cloth, &fluid, &cp, &objects, sphere_num_lat, sphere_num_lon);
   if (!success) {
     std::cout << "Warn: Unable to load from file: " << file_to_load_from << std::endl;
   }
@@ -512,10 +572,14 @@ int main(int argc, char **argv) {
   cloth.buildGrid();
   cloth.buildClothMesh();
 
+  // Initialize the Fluid object
+  fluid.buildBlock();
+
   // Initialize the ClothSimulator object
   app = new ClothSimulator(project_root, screen);
   app->loadCloth(&cloth);
   app->loadClothParameters(&cp);
+  app->loadFluid(&fluid);
   app->loadCollisionObjects(&objects);
   app->init();
 

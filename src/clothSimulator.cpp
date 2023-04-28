@@ -182,6 +182,8 @@ ClothSimulator::~ClothSimulator() {
 
 void ClothSimulator::loadCloth(Cloth *cloth) { this->cloth = cloth; }
 
+void ClothSimulator::loadFluid(Fluid *fluid) { this->fluid = fluid; }
+
 void ClothSimulator::loadClothParameters(ClothParameters *cp) { this->cp = cp; }
 
 void ClothSimulator::loadCollisionObjects(vector<CollisionObject *> *objects) { this->collision_objects = objects; }
@@ -245,7 +247,8 @@ void ClothSimulator::drawContents() {
     vector<Vector3D> external_accelerations = {gravity};
 
     for (int i = 0; i < simulation_steps; i++) {
-      cloth->simulate(frames_per_sec, simulation_steps, cp, external_accelerations, collision_objects);
+      // cloth->simulate(frames_per_sec, simulation_steps, cp, external_accelerations, collision_objects);
+      fluid->simulate(frames_per_sec, simulation_steps, external_accelerations, collision_objects);
     }
   }
 
@@ -272,10 +275,10 @@ void ClothSimulator::drawContents() {
   switch (active_shader.type_hint) {
   case WIREFRAME:
     shader.setUniform("u_color", color, false);
-    drawWireframe(shader);
+    // drawWireframe(shader);
     break;
   case NORMALS:
-    drawNormals(shader);
+    // drawNormals(shader);
     break;
   case PHONG:
   
@@ -299,9 +302,15 @@ void ClothSimulator::drawContents() {
     shader.setUniform("u_height_scaling", m_height_scaling, false);
     
     shader.setUniform("u_texture_cubemap", 5, false);
-    drawPhong(shader);
+    // drawPhong(shader);
     break;
   }
+
+  for (Particle &particle : fluid->particles) {
+    particle.render(shader);
+  }
+
+
 
   for (CollisionObject *co : *collision_objects) {
     co->render(shader);
