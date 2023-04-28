@@ -28,6 +28,15 @@
     "normal": [0, 0, 1],
     "friction": 0.5
   },
+  "fluid": {
+    "width": 0.5,
+    "height": 0.5,
+    "length": 0.5,
+    "num_width_pts": 8,
+    "num_height_pts": 8,
+    "num_length_pts": 8,
+    "radius": 0.025
+  },
   "cloth": {
     "damping": 0.2,
     "density": 150.0,
